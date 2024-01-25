@@ -1,0 +1,62 @@
+/*https://www.linkedin.com/in/estelle-alizier-5b1208298/*/
+/*Puissance 4 */
+.container-puissance {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Utiliser la hauteur de la vue pour centrer verticalement */
+}
+
+
+.fond {
+    background-color: #DED2B9;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3); 
+}
+
+.fond h3 {
+    color: #2C180F;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(7, 50px);
+    grid-template-rows: repeat(6, 50px);
+    gap: 5px;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.red { background-color: #FF4136; }
+.yellow { background-color: #FFDC00; }
+
+#game-result {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #2C180F;
+}
+
+#restart-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #2C180F;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6); 
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#restart-button:hover {
+    background-color: rgb(57, 13, 13);
+    transform: scale(1.05);
+}
