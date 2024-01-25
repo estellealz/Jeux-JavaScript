@@ -1,0 +1,68 @@
+/*https://www.linkedin.com/in/estelle-alizier-5b1208298/*/
+/*jeu nombre*/
+
+#container {
+    text-align: center;
+    background-color: #DED2B9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3); 
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #DED2B9; /* marron foncé */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #DED2B9; /* marron foncé */
+}
+
+p {
+    margin-bottom: 10px;
+    color: #2C180F; /* marron foncé */
+}
+
+.guessField {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#guessSubmit,
+#reset {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #2C180F; /* marron clair */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#guessSubmit:hover,
+#reset:hover {
+    background-color: rgb(57, 13, 13); /* marron plus foncé au survol */
+    transform: scale(1.05);
+}
+
+#resultParas {
+    margin-top: 20px;
+}
+
+#lastResult {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #4d2a0a; /* marron foncé */
+}
+
+#lowOrHigh {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #4d2a0a; /* marron foncé */
+}
+
+/*fin jeu nombre*/
