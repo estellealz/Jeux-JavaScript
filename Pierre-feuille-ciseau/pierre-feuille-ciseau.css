@@ -1,0 +1,43 @@
+/*https://www.linkedin.com/in/estelle-alizier-5b1208298/*/
+/* jeu pierre feuille ciseaux */
+
+
+#result {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #DED2B9;
+    text-align: center;
+}
+
+#choices {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    color: #DED2B9;
+}
+
+.choice {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.choice:hover {
+    background-color: rgb(57, 13, 13);;
+}
+
+#computer-choice {
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #DED2B9;
+    text-align: center;
+}
+
+h3{
+    color: #DED2B9;
+    text-align: center;
+}
+/* fin jeu pierre feuille ciseaux */
