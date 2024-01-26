@@ -1,12 +1,15 @@
 /*https://www.linkedin.com/in/estelle-alizier-5b1208298/*/
 //Puissance 4
+
+// Etape 1 :  Travailler avec un tableau de cellules de jeu, initialise le joueur actuel à "red" 
+//            et récupère une référence à l'élément qui affichera le résultat du jeu.
 document.addEventListener("DOMContentLoaded", function() {
     const board = document.getElementById("board");
     const cells = [];
     let currentPlayer = "red";
     let gameResult = document.getElementById("game-result");
 
-    // Create cells
+    // Etape 2 : Créer la grille de jeu
     for (let row = 0; row < 6; row++) {
         for (let col = 0; col < 7; col++) {
             const cell = document.createElement("div");
@@ -18,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Add click event to each cell
+    // Etape 3 : Ajouter un événement de clic à chaque cellule
     cells.forEach(cell => {
         cell.addEventListener("click", function() {
             dropToken(parseInt(this.dataset.col));
