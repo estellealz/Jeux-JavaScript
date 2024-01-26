@@ -43,6 +43,7 @@ guessSubmit.addEventListener("click", function () {
     if (guessCount < 10) {
         guessCount++;
 
+        // Verification
         if (guess === randomNumber) {
             lastResult.textContent = 'Bravo le nombre était : ' + randomNumber;
             lastResult.style.backgroundColor = 'green';
@@ -55,7 +56,7 @@ guessSubmit.addEventListener("click", function () {
             lastResult.style.backgroundColor = guess > randomNumber ? 'red' : 'yellow';
         }
     } else {
-        // Limite d'essais atteinte
+        // Limite d'essais atteinte --> PERDU
         lastResult.textContent = 'Dommage! Trop de tentatives. Le nombre était : ' + randomNumber;
         lastResult.style.backgroundColor = 'orange';
         guessField.disabled = true; // Désactiver le champ d'entrée après 10 essais
@@ -63,6 +64,7 @@ guessSubmit.addEventListener("click", function () {
     }
 });
 
+// Etape 7 : Recommencer le jeu
 function resetGame() {
     startGame();
 }
