@@ -93,14 +93,14 @@ document.addEventListener("DOMContentLoaded", function() {
         return count >= 4;
     }
 
-    // Function to reset the game
+    // Etape 9 : Fonction pour recommencer la game
     function resetGame() {
         cells.forEach(cell => cell.className = "cell");
         currentPlayer = "red";
         gameResult.innerText = ""; // Réinitialiser le résultat
     }
 
-    // Function to display the result on the page
+    // Etape 10 : Fonction d’affichage du résultat sur la page
     function displayResult() {
         const winner = currentPlayer === "red" ? "rouges" : "jaunes";
         gameResult.innerText = `Bravo les ${winner} ont gagné !`;
