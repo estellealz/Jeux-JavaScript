@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Function to drop a token in a column
+    // Etape 4 : Fonction permettant de déposer un jeton dans une colonne
     function dropToken(col) {
         const emptyCell = findEmptyCell(col);
         if (emptyCell !== null) {
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Function to find the lowest empty cell in a column
+    // Etape 5 : Fonction permettant de trouver la cellule vide la plus basse d’une colonne
     function findEmptyCell(col) {
         for (let row = 5; row >= 0; row--) {
             const cell = cells.find(c => c.dataset.row == row && c.dataset.col == col);
@@ -53,12 +53,12 @@ document.addEventListener("DOMContentLoaded", function() {
         return null; // Column is full
     }
 
-    // Function to switch players
+    // Etape 6 : Fonction pour changer de joueur
     function switchPlayer() {
         currentPlayer = (currentPlayer === "red") ? "yellow" : "red";
     }
 
-    // Function to check for a win
+    // Etape 7 : Fonction pour vérifier s'il y a un gagnant
     function checkForWin(row, col) {
         return (
             checkDirection(row, col, 0, 1) ||  // Horizontal
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
         );
     }
 
-    // Function to check for a win in a specific direction
+    // Etape 8 : Fonction pour vérifier un gain dans une direction spécifique / \ | _
     function checkDirection(row, col, rowDir, colDir) {
         const player = currentPlayer;
         let count = 1; // Count of consecutive tokens
