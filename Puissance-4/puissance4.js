@@ -106,11 +106,11 @@ document.addEventListener("DOMContentLoaded", function() {
         gameResult.innerText = `Bravo les ${winner} ont gagné !`;
     }
 
-    // Function to disable the board after a win
+    // Etape 11 : Fonction pour désactiver le tableau après une victoire
     function disableBoard() {
         cells.forEach(cell => cell.removeEventListener("click", handleCellClick));
     }
 
-    // Add click event to the restart button
+    // Etape 12 : Ajouter un événement de clic au bouton de redémarrage
     document.getElementById("restart-button").addEventListener("click", resetGame);
 });
