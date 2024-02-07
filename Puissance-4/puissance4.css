@@ -1,23 +1,24 @@
 /*https://www.linkedin.com/in/estelle-alizier-5b1208298/*/
-/*Puissance 4 */
+
+/* Styles pour le jeu Puissance 4 */
+
 .container-puissance {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Utiliser la hauteur de la vue pour centrer verticalement */
+    height: 100vh; /* J'utilise la hauteur de la vue pour centrer verticalement */
 }
-
 
 .fond {
     background-color: #DED2B9;
     text-align: center;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3); 
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
 .fond h3 {
-    color: #2C180F;
+    color: #2C180F; /* Couleur du texte pour les titres h3 */
 }
 
 #board {
@@ -35,28 +36,30 @@
     cursor: pointer;
 }
 
-.red { background-color: #FF4136; }
-.yellow { background-color: #FFDC00; }
+.red { background-color: #FF4136; } /* Couleur pour les jetons rouges */
+.yellow { background-color: #FFDC00; } /* Couleur pour les jetons jaunes */
 
 #game-result {
     margin-top: 20px;
     font-size: 20px;
-    color: #2C180F;
+    color: #2C180F; /* Couleur du texte pour le résultat du jeu */
 }
 
 #restart-button {
     margin-top: 20px;
     padding: 10px 20px;
     cursor: pointer;
-    background-color: #2C180F;
-    color: #fff;
+    background-color: #2C180F; /* Couleur de fond pour le bouton de redémarrage */
+    color: #fff; /* Couleur du texte pour le bouton de redémarrage */
     border: none;
     border-radius: 5px;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6); 
-    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6); /* Ombre légère autour du bouton */
+    transition: background-color 0.3s, transform 0.2s; /* Transition au survol pour une animation fluide */
 }
 
 #restart-button:hover {
-    background-color: rgb(57, 13, 13);
-    transform: scale(1.05);
+    background-color: rgb(57, 13, 13); /* Couleur de fond plus foncée au survol du bouton de redémarrage */
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
 }
+
+/* Fin des styles pour le jeu Puissance 4 */
