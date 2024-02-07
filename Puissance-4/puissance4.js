@@ -1,48 +1,47 @@
 /*https://www.linkedin.com/in/estelle-alizier-5b1208298/*/
-//Puissance 4
+// Puissance 4
 
-// Etape 1 :  Travailler avec un tableau de cellules de jeu, initialise le joueur actuel à "red" 
-//            et récupère une référence à l'élément qui affichera le résultat du jeu.
-document.addEventListener("DOMContentLoaded", function() {
-    const board = document.getElementById("board");
-    const cells = [];
-    let currentPlayer = "red";
-    let gameResult = document.getElementById("game-result");
+// J'ai ajouté un écouteur d'événements pour attendre que le contenu de la page soit chargé
+document.addEventListener("DOMContentLoaded", function () {
+    const board = document.getElementById("board");  // J'ai récupéré une référence à l'élément du tableau de jeu
+    const cells = [];  // J'ai initialisé un tableau pour stocker les cellules du jeu
+    let currentPlayer = "red";  // J'ai initialisé le joueur actuel à "red"
+    let gameResult = document.getElementById("game-result");  // J'ai récupéré une référence à l'élément qui affichera le résultat du jeu
 
-    // Etape 2 : Créer la grille de jeu
+    // J'ai créé la grille de jeu avec une boucle imbriquée pour les lignes et les colonnes
     for (let row = 0; row < 6; row++) {
         for (let col = 0; col < 7; col++) {
-            const cell = document.createElement("div");
-            cell.className = "cell";
-            cell.dataset.row = row;
+            const cell = document.createElement("div");  // J'ai créé une nouvelle cellule
+            cell.className = "cell";  // J'ai attribué une classe à la cellule
+            cell.dataset.row = row;  // J'ai attribué des attributs de données pour stocker la position de la cellule
             cell.dataset.col = col;
-            board.appendChild(cell);
-            cells.push(cell);
+            board.appendChild(cell);  // J'ai ajouté la cellule au tableau de jeu
+            cells.push(cell);  // J'ai ajouté la cellule au tableau de cellules
         }
     }
 
-    // Etape 3 : Ajouter un événement de clic à chaque cellule
+    // J'ai ajouté un événement de clic à chaque cellule pour la fonction dropToken
     cells.forEach(cell => {
-        cell.addEventListener("click", function() {
+        cell.addEventListener("click", function () {
             dropToken(parseInt(this.dataset.col));
         });
     });
 
-    // Etape 4 : Fonction permettant de déposer un jeton dans une colonne
+    // J'ai écrit une fonction pour déposer un jeton dans une colonne
     function dropToken(col) {
-        const emptyCell = findEmptyCell(col);
+        const emptyCell = findEmptyCell(col);  // J'ai trouvé la cellule vide la plus basse dans la colonne
         if (emptyCell !== null) {
-            emptyCell.classList.add(currentPlayer);
+            emptyCell.classList.add(currentPlayer);  // J'ai ajouté la classe du joueur actuel à la cellule vide
             if (checkForWin(parseInt(emptyCell.dataset.row), col)) {
-                displayResult(`Player ${currentPlayer.toUpperCase()} wins!`);
-                disableBoard(); // Disable the board after a win
+                displayResult();  // J'ai affiché le résultat du jeu
+                disableBoard();  // J'ai désactivé le tableau après une victoire
             } else {
-                switchPlayer();
+                switchPlayer();  // J'ai changé de joueur
             }
         }
     }
 
-    // Etape 5 : Fonction permettant de trouver la cellule vide la plus basse d’une colonne
+    // J'ai écrit une fonction pour trouver la cellule vide la plus basse dans une colonne
     function findEmptyCell(col) {
         for (let row = 5; row >= 0; row--) {
             const cell = cells.find(c => c.dataset.row == row && c.dataset.col == col);
@@ -50,28 +49,28 @@ document.addEventListener("DOMContentLoaded", function() {
                 return cell;
             }
         }
-        return null; // Column is full
+        return null; // La colonne est pleine
     }
 
-    // Etape 6 : Fonction pour changer de joueur
+    // J'ai écrit une fonction pour changer de joueur
     function switchPlayer() {
         currentPlayer = (currentPlayer === "red") ? "yellow" : "red";
     }
 
-    // Etape 7 : Fonction pour vérifier s'il y a un gagnant
+    // J'ai écrit une fonction pour vérifier s'il y a un gagnant en vérifiant différentes directions
     function checkForWin(row, col) {
         return (
             checkDirection(row, col, 0, 1) ||  // Horizontal
             checkDirection(row, col, 1, 0) ||  // Vertical
-            checkDirection(row, col, 1, 1) ||  // Diagonal /
-            checkDirection(row, col, -1, 1)    // Diagonal \
+            checkDirection(row, col, 1, 1) ||  // Diagonale /
+            checkDirection(row, col, -1, 1)    // Diagonale \
         );
     }
 
-    // Etape 8 : Fonction pour vérifier un gain dans une direction spécifique / \ | _
+    // J'ai écrit une fonction pour vérifier un gain dans une direction spécifique / \ | _
     function checkDirection(row, col, rowDir, colDir) {
         const player = currentPlayer;
-        let count = 1; // Count of consecutive tokens
+        let count = 1;  // Compteur de jetons consécutifs
         let r = row + rowDir;
         let c = col + colDir;
 
@@ -93,24 +92,24 @@ document.addEventListener("DOMContentLoaded", function() {
         return count >= 4;
     }
 
-    // Etape 9 : Fonction pour recommencer la game
+    // J'ai écrit une fonction pour recommencer le jeu
     function resetGame() {
         cells.forEach(cell => cell.className = "cell");
         currentPlayer = "red";
-        gameResult.innerText = ""; // Réinitialiser le résultat
+        gameResult.innerText = "";  // J'ai réinitialisé le résultat
     }
 
-    // Etape 10 : Fonction d’affichage du résultat sur la page
+    // J'ai écrit une fonction pour afficher le résultat sur la page
     function displayResult() {
         const winner = currentPlayer === "red" ? "rouges" : "jaunes";
         gameResult.innerText = `Bravo les ${winner} ont gagné !`;
     }
 
-    // Etape 11 : Fonction pour désactiver le tableau après une victoire
+    // J'ai écrit une fonction pour désactiver le tableau après une victoire
     function disableBoard() {
         cells.forEach(cell => cell.removeEventListener("click", handleCellClick));
     }
 
-    // Etape 12 : Ajouter un événement de clic au bouton de redémarrage
+    // J'ai ajouté un événement de clic au bouton de redémarrage
     document.getElementById("restart-button").addEventListener("click", resetGame);
 });
