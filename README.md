@@ -5,4 +5,4 @@
 <br>ou mon <strong> Portfolio </strong> sur mon site web codé de A à Z : <strong> http://estelle-alizier.fr/ </strong>
 <br>Passez une agréable journée !
 <br>
-(D'autres projets arrivent bientot !)
+(D'autres projets arrivent bientot, tels que le fameux jeu casse-brique)
