@@ -1,4 +1,4 @@
-const paddle = document.getElementById('paddle');
+/*https://www.linkedin.com/in/estelle-alizier-5b1208298/*/const paddle = document.getElementById('paddle');
 const ball = document.getElementById('ball');
 const startButton = document.getElementById('start-button');
 const stopButton = document.getElementById('stop-button');
