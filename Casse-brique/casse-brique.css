@@ -36,3 +36,32 @@ body {
 
     position: absolute;
 }
+#paddle {
+    position: absolute;
+    bottom: 10px;
+    width: 80px;
+    height: 10px;
+    background-color: #2C180F; /* Couleur du paddle */
+    border-radius: 30px; /* Forme arrondie du paddle */
+}
+
+button {
+    margin-top: 10px;
+    background-color: #2C180F; /* Couleur de fond des boutons */
+    color: #DED2B9; /* Couleur du texte des boutons */
+}
+
+.titre {
+    text-align: center;
+    color: #DED2B9; /* Couleur du texte pour le titre */
+}
+
+consigne {
+    text-align: center;
+    color: #DED2B9; /* Couleur du texte pour la consigne */
+}
+
+#game-message {
+    color: #DED2B9; /* Couleur du texte du message de jeu */
+    margin-left: 25%;
+}
