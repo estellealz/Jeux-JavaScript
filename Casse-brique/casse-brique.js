@@ -59,47 +59,5 @@ function resetGame() {
   
   
 
-function updateGame() {
-    if (gameRunning) {
-      ballX += ballSpeedX;
-      ballY += ballSpeedY;
-  
-      // Gestion des collisions avec le paddle
-      if (
-        ballY + 20 >= paddle.offsetTop &&
-        ballY <= paddle.offsetTop + paddle.clientHeight &&
-        ballX + 20 >= paddle.offsetLeft &&
-        ballX <= paddle.offsetLeft + paddle.clientWidth
-      ) {
-        ballSpeedY *= -1;
-      }
-  
-      // Gestion des collisions avec les briques
-      bricks.forEach((brick, index) => {
-        if (
-          ballY + 20 >= brick.offsetTop &&
-          ballY <= brick.offsetTop + brick.clientHeight &&
-          ballX + 20 >= brick.offsetLeft &&
-          ballX <= brick.offsetLeft + brick.clientWidth
-        ) {
-          brick.style.display = 'none';
-          ballSpeedY *= -1;
-        }
-      });
-  
-      // Gestion des collisions avec les bords du jeu
-      if (ballX < 0 || ballX > (600 - 20)) {
-        ballSpeedX *= -1;
-      }
-  
-      if (ballY < 0) {
-        ballSpeedY *= -1;
-      }
-  
-      // Gestion de la perte de la partie
-      if (ballY > (400 - 20)) {
-        gameMessage.innerText = "Perdu!";
-        stopGame();
-      }
-  
+
  
