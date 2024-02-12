@@ -102,29 +102,4 @@ function updateGame() {
         stopGame();
       }
   
-      // Gestion de la victoire
-      const remainingBricks = document.querySelectorAll('.brick:not([style="display: none;"])');
-      if (remainingBricks.length === 0) {
-        gameMessage.innerText = "Gagné!";
-        stopGame();
-      }
-  
-      paddle.style.left = paddleX + 'px';
-      ball.style.left = ballX + 'px';
-      ball.style.top = ballY + 'px';
-  
-      requestAnimationFrame(updateGame);
-    }
-  }
-
-document.addEventListener('mousemove', (e) => {
-    if (gameRunning) {
-      const containerRect = document.getElementById('game-container').getBoundingClientRect();
-      paddleX = e.clientX - containerRect.left - paddle.clientWidth / 2;
-      paddleX = Math.max(0, Math.min(containerRect.width - paddle.clientWidth, paddleX));
-      paddle.style.left = paddleX + 'px';
-    }
-  });
-
-resetGame();
-
+ 
