@@ -1,3 +1,4 @@
+/* Réinitialisation des styles par défaut */
 body {
     margin: 0;
     padding: 0;
@@ -6,64 +7,74 @@ body {
     color: #DED2B9; /* Couleur du texte par défaut */
 }
 
+/* Style du titre du jeu */
 #game-title {
     color: #DED2B9; /* Couleur du texte du titre */
     text-align: center; /* Centre le texte horizontalement */
-    margin-top: 20px;
+    margin-top: 20px; /* Espace en haut du titre */
 }
 
+/* Style de la description du jeu */
 #game-description {
     color: #DED2B9; /* Couleur du texte de la description */
-    text-align: center;
+    text-align: center; /* Centre le texte horizontalement */
 }
 
+/* Style du conteneur principal du jeu */
 #game-container {
-    margin-top: -20px;
-    display: flex;
+    margin-top: -20px; /* Décalage vers le haut pour ajuster le placement */
+    display: flex; /* Utilisation de Flexbox pour le positionnement */
     flex-direction: column; /* Met le contenu en colonne plutôt qu'en ligne (par défaut) */
     align-items: center; /* Centre les éléments horizontalement */
     justify-content: center; /* Centre les éléments verticalement */
-    height: 100vh;
+    height: 100vh; /* Hauteur de 100% de la fenêtre */
 }
 
+/* Style du canvas du jeu Snake */
 #snakeCanvas {
     background-color: #DED2B9; /* Couleur de fond du canvas */
     border: none; /* Pas de bordure */
 }
 
+/* Style du bouton de redémarrage */
 #restart-button {
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
+    padding: 10px; /* Remplissage intérieur du bouton */
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer; /* Curseur pointer au survol */
     background-color: #DED2B9; /* Couleur de fond du bouton */
     color: #2C180F; /* Couleur du texte du bouton */
-    border: none;
-    border-radius: 5px;
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Bordure arrondie */
     margin-top: 10px; /* Espace en haut du bouton */
 }
 
+/* Style du conteneur du score */
 #score-container {
-    color: #DED2B9;
-    margin-top: 20px;
+    color: #DED2B9; /* Couleur du texte du score */
+    margin-top: 20px; /* Espace en haut du score */
 }
 
-
-img{
-    background-color:#DED2B9;
+/* Style des flèches de contrôle */
+img {
+    background-color: #DED2B9; /* Couleur de fond des images */
 }
+
+/* Style du conteneur des flèches de contrôle */
 #arrows-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
-    width: 100%; 
+    margin-top: 20px; /* Espace en haut du conteneur */
+    display: flex; /* Utilisation de Flexbox pour le positionnement */
+    justify-content: space-around; /* Espace égal autour des éléments */
+    width: 100%; /* Largeur de 100% pour occuper toute la largeur */
 }
 
+/* Style des flèches */
 .arrow {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+    width: 40px; /* Largeur des flèches */
+    height: 40px; /* Hauteur des flèches */
+    cursor: pointer; /* Curseur pointer au survol */
 }
 
+/* Style des images des flèches */
 .arrow img {
     width: 100%; /* Pour que l'image occupe toute la taille du conteneur */
     height: 100%; /* Pour que l'image occupe toute la taille du conteneur */
