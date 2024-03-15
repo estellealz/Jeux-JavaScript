@@ -1,9 +1,10 @@
 const canvas = document.getElementById('snakeCanvas');
 const ctx = canvas.getContext('2d');
 const restartButton = document.getElementById('restart-button');
-const scoreElement = document.getElementById('score'); // Ajout de cet élément pour afficher le score
+const scoreElement = document.getElementById('score'); // Élément pour afficher le score
 restartButton.addEventListener('click', resetGame);
 
+// Ajout d'écouteurs d'événements pour les flèches de direction
 document.getElementById('arrow-top').addEventListener('click', () => changeDirection('up'));
 document.getElementById('arrow-bottom').addEventListener('click', () => changeDirection('down'));
 document.getElementById('arrow-left').addEventListener('click', () => changeDirection('left'));
@@ -15,15 +16,15 @@ const cellSize = 20;
 // Taille du canvas
 const canvasSize = 400;
 
-// Initial snake position
+// Position initiale du serpent
 let snake = [{ x: 10, y: 10 }];
 let direction = 'right';
 
-// Initial food position
+// Position initiale de la nourriture
 let food = { x: 15, y: 15 };
 
 let gameRunning = true;
-let score = 0; // Ajout de la variable score
+let score = 0; // Score initial
 
 function drawSnake() {
     ctx.clearRect(0, 0, canvasSize, canvasSize);
@@ -125,7 +126,6 @@ function resetGame() {
     window.location.reload();
 }
 
-
 // Gère les pressions de touches de flèches
 document.addEventListener('keydown', (e) => {
     // Annule le comportement par défaut de la touche si c'est une touche de direction
@@ -148,6 +148,7 @@ document.addEventListener('keydown', (e) => {
             break;
     }
 });
+
 function changeDirection(newDirection) {
     switch (newDirection) {
         case 'up':
