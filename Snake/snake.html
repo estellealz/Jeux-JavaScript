@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="snake.css">
+    <title>https://www.linkedin.com/in/estelle-alizier-5b1208298/</title>
+</head>
+<body>
+    <h2 id="game-title">Le Snake</h2>
+    <p id="game-description">Snake est un jeu où le joueur contrôle un serpent qui grandit en mangeant des points. 
+        <br>L'objectif est d'éviter de se heurter aux murs ou à sa propre queue.</p>
+    <div id="game-container">
+        
+        <canvas id="snakeCanvas" width="400" height="400"></canvas>
+        <div id="button-container">
+            <button id="restart-button" onclick="restartGame()">Recommencer la partie</button>
+        </div>
+        <div id="arrows-container">
+            <div id="arrow-top" class="arrow" onclick="changeDirection('up')">
+                <img src="../../images/fleche-vers-le-haut.png" alt="Flèche vers le haut">
+            </div>
+            <div id="arrow-bottom" class="arrow" onclick="changeDirection('down')">
+                <img src="../../images/fleche-vers-le-bas.png" alt="Flèche vers le bas">
+            </div>
+            <div id="arrow-left" class="arrow" onclick="changeDirection('left')">
+                <img src="../../images/fleche-gauche.png" alt="Flèche vers la gauche">
+            </div>
+            <div id="arrow-right" class="arrow" onclick="changeDirection('right')">
+                <img src="../../images/longue-fleche-pointant-vers-la-droite.png" alt="Flèche vers la droite">
+            </div>
+        </div>
+        <div id="score-container">
+            <p id="score">Score: 0</p>
+        </div>
+
+    </div>
+
+    <script src="snake.js"></script>
+</body>
+</html>
